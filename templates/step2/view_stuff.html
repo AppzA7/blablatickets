@@ -1,0 +1,48 @@
+
+
+{% extends "base.html" %}
+{% block title %}All Courier{% endblock %}
+{% block head %}All Courier{% endblock %}
+{% block content %}
+
+        
+	<table id="example" class="display nowrap" cellspacing="10" width="100%">
+        <thead>
+            <tr>
+                <th>Courier's Weight</th>
+                <th>Package length (meters)</th>
+                <th>Package width (meters)</th>
+                <th>Package height (meters)</th>
+                <th>Delivery From</th>
+                <th>Destination(meters)</th>
+
+                
+            </tr>
+        </thead>
+	<tbody>	  
+			
+				
+			{% for courier in boldmessage %}
+				<tr>
+				 	<td>             {{courier.weight}} </td>
+					<td>		 {{courier.length}} </td>
+					<td> 		 {{courier.width}} </td>
+					<td>		 {{courier.height}} </td>
+					<td>		 {{courier.location_from}} </td>
+					<td>		 {{courier.location_to}} </td>
+				</tr>
+				
+			{% endfor %}
+	</tbody>
+	</table>
+    
+    
+    
+ <br/>
+<br/>
+
+
+        
+    
+    <button type="button" onclick="window.location.href='/home/' ">Back</button>
+{% endblock %}
