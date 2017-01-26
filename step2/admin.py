@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Courier
+from .models import Tickets
 
-admin.site.register(Courier)
+admin.site.register(Tickets)
 # Register your models here.
