@@ -1,5 +1,4 @@
-{% block title %}All Courier{% endblock %}
-{% block head %}All Courier{% endblock %}
+
 {% block content %}
 
         
@@ -13,6 +12,7 @@
                 <th>Train number </th>
                 <th>Delivery From</th>
                 <th>Destination(meters)</th>
+                <th>Confirm train number</th>
 
                 
             </tr>
@@ -22,17 +22,24 @@
 				
 			{% for ticket in boldmessage %}
 				<tr>
-				 	<td>         {{ticket.PNR}} </td>
+					<form action="/step2/fetch_data/" method="POST">{% csrf_token %}
+				 	<td>         {{ticket.journey_id}} </td>
 					<td>		 {{ticket.train_no}} </td>
 					<td> 		 {{ticket.date}} </td>
 					<td>		 {{ticket.price}} </td>
 					<td>		 {{ticket.train_name}} </td>
 					<td>		 {{ticket.location_from}} </td>
 					<td>		 {{ticket.location_to}} </td>
-					<td> 		 <button type="button" onclick="window.location.href='/home/' ">Buy Ticket</button>						</td>
+					<td> 		 {{ticket.user}}   		</td>
+							 						
 				</tr>
 				
 			{% endfor %}
+
+			<input type="text" placeholder="Journey Id" name="yolo" > 
+       
+       		<button type="submit"  value="submit" id="add-button">Make Request</button>	
+       
 	</tbody>
 	</table>
     

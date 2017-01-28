@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Tickets(models.Model):
+	journey_id=models.BigIntegerField(default=1)
 	PNR= models.BigIntegerField()
 	train_no=models.BigIntegerField()
 	date=models.DateTimeField()
